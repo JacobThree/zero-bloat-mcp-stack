@@ -33,17 +33,36 @@ cd ~/.dotfiles
 chmod +x install.sh
 ./install.sh
 ```
+
+## Reinstall / Repair
+
+If stack already cloned and you want to reinstall everything:
+
+```bash
+cd ~/.dotfiles
+chmod +x install.sh
+./install.sh
+```
+
+If you want full fresh reinstall:
+
+```bash
+rm -rf ~/.dotfiles
+git clone https://github.com/JacobThree/zero-bloat-mcp-stack.git ~/.dotfiles
+cd ~/.dotfiles
+chmod +x install.sh
+./install.sh
+```
+
 What the script does:
 
 - Installs global NPM packages for routing and sandboxing.
-
 - Installs Python MCP servers for codebase mapping.
-
 - Installs and initializes the Rust Token Killer.
+- Maps Agent Skills lifecycle commands into global skill aliases (`/spec`, `/plan`, `/build`, `/test`, `/review`, `/ship`).
+- Runs global smoke checks for `rtk`, `n2-qln`, `context-mode`, and `graphify`.
 
-- Clones the Caveman skill and Addy Osmani's agent skills directly into your local AI blueprints directory.
-
-Usage
+## Quickstart (Codex)
 
 To initialize this architecture in a new or existing project, navigate to your project directory and run:
 
@@ -52,11 +71,71 @@ $caveman Execute ~/.dotfiles/ai_blueprints/project_init.md strictly.
 ```
 This command will:
 
-- Scaffold a local .skills/ directory containing only the exact domain-specific prompts needed for the current project.
+- Create `CLAUDE.md` with project context and lifecycle command mapping.
+- Generate `.codex/config.toml` for `n2-qln`, `context-mode`, and `graphify`.
+- Run stack checks and write `.codex/stack-check.md`.
 
-- Generate a .codex/config.toml that routes your MCP tools through the QLN semantic proxy.
+## Verify Stack
 
-- Generate a CLAUDE.md memory card to persist architectural context across sessions, preventing the AI from re-reading the entire directory structure.
+Run per-project smoke test:
+
+```bash
+~/.dotfiles/ai_blueprints/stack_smoke_test.sh
+```
+
+Read results:
+
+```bash
+cat .codex/stack-check.md
+```
+
+Global checks:
+
+```bash
+rtk --version
+n2-qln --help
+context-mode --help
+python -m graphify --help
+```
+
+## Command Reference
+
+Install stack:
+
+```bash
+cd ~/.dotfiles && ./install.sh
+```
+
+Initialize current repo:
+
+```bash
+$caveman Execute ~/.dotfiles/ai_blueprints/project_init.md strictly.
+```
+
+Skill lifecycle commands (inside Codex):
+
+```text
+/spec
+/plan
+/build
+/test
+/review
+/code-simplify
+/ship
+```
+
+Graphify map + report:
+
+```bash
+graphify update .
+ls -la graphify-out
+```
+
+RTK stats:
+
+```bash
+rtk gain
+```
 
 License
 
