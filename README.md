@@ -75,6 +75,44 @@ This command will:
 - Generate `.codex/config.toml` for `n2-qln`, `context-mode`, and `graphify`.
 - Run stack checks and write `.codex/stack-check.md`.
 
+## Existing Project Workflow (Recommended Order)
+
+Run this sequence in any existing repo:
+
+```bash
+# 1) Enter project
+cd /path/to/your/project
+
+# 2) Initialize project wiring (CLAUDE.md + .codex/config.toml + stack check)
+$caveman Execute ~/.dotfiles/ai_blueprints/project_init.md strictly.
+
+# 3) Verify project stack health
+~/.dotfiles/ai_blueprints/stack_smoke_test.sh
+cat .codex/stack-check.md
+
+# 4) Build graph index for architecture-aware queries
+graphify update .
+ls -la graphify-out
+
+# 5) Start working with lifecycle commands in Codex
+# /spec -> /plan -> /build -> /test -> /review -> /ship
+```
+
+Practical daily loop:
+
+```text
+/plan
+/build
+/test
+/review
+```
+
+When codebase changes heavily, refresh graph:
+
+```bash
+graphify update .
+```
+
 ## Verify Stack
 
 Run per-project smoke test:
