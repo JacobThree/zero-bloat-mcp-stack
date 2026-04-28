@@ -21,7 +21,7 @@ This dotfiles configuration automatically installs and links the following open-
 * **[Graphifyy](https://pypi.org/project/graphifyy/)**: Builds a structural knowledge graph of your project, preventing the AI from reading raw files to understand architecture.
 * **[RTK (Rust Token Killer)](https://github.com/rtk-ai/rtk)**: A background CLI hook that automatically strips formatting and verbosity from terminal logs before the LLM processes them.
 * **[Caveman](https://github.com/JuliusBrussee/caveman)**: A system prompt skill that forces the AI to drop conversational filler and output bare-metal code.
-* **[Agent Skills](https://github.com/addyosmani/agent-skills)**: Addy Osmani's progressive disclosure engineering prompts for modular, zero-bloat roleplaying.
+* **[Agent Skills](https://github.com/addyosmani/agent-skills)**: Addy Osmani's progressive disclosure engineering prompts for modular, zero-bloat interactions.
 
 ## Installation
 
