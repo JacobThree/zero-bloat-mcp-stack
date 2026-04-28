@@ -28,7 +28,7 @@ This dotfiles configuration automatically installs and links the following open-
 Clone this repository into a `.dotfiles` directory and run the installer.
 
 ```bash
-git clone [https://github.com/jacobthree/dotfiles.git](https://github.com/jacobthree/dotfiles.git) ~/.dotfiles
+git clone [https://github.com/JacobThree/zero-bloat-mcp-stack.git](https://github.com/JacobThree/zero-bloat-mcp-stack.git) ~/.dotfiles
 cd ~/.dotfiles
 chmod +x install.sh
 ./install.sh
