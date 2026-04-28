@@ -28,35 +28,35 @@ This dotfiles configuration automatically installs and links the following open-
 Clone this repository into a `.dotfiles` directory and run the installer.
 
 ```bash
-git clone [https://github.com/YOUR_GITHUB_USERNAME/dotfiles.git](https://github.com/YOUR_GITHUB_USERNAME/dotfiles.git) ~/.dotfiles
+git clone [https://github.com/jacobthree/dotfiles.git](https://github.com/jacobthree/dotfiles.git) ~/.dotfiles
 cd ~/.dotfiles
 chmod +x install.sh
 ./install.sh
 ```
 What the script does:
 
-    Installs global NPM packages for routing and sandboxing.
+- Installs global NPM packages for routing and sandboxing.
 
-    Installs Python MCP servers for codebase mapping.
+- Installs Python MCP servers for codebase mapping.
 
-    Installs and initializes the Rust Token Killer.
+- Installs and initializes the Rust Token Killer.
 
-    Clones the Caveman skill and Addy Osmani's agent skills directly into your local AI blueprints directory.
+- Clones the Caveman skill and Addy Osmani's agent skills directly into your local AI blueprints directory.
 
 Usage
 
 To initialize this architecture in a new or existing project, navigate to your project directory and run:
-Bash
 
+```bash
 $caveman Execute ~/.dotfiles/ai_blueprints/project_init.md strictly.
-
+```
 This command will:
 
-    Scaffold a local .skills/ directory containing only the exact domain-specific prompts needed for the current project.
+- Scaffold a local .skills/ directory containing only the exact domain-specific prompts needed for the current project.
 
-    Generate a .codex/config.toml that routes your MCP tools through the QLN semantic proxy.
+- Generate a .codex/config.toml that routes your MCP tools through the QLN semantic proxy.
 
-    Generate a CLAUDE.md memory card to persist architectural context across sessions, preventing the AI from re-reading the entire directory structure.
+- Generate a CLAUDE.md memory card to persist architectural context across sessions, preventing the AI from re-reading the entire directory structure.
 
 License
 
