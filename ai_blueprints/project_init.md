@@ -1,19 +1,26 @@
 # AI Workspace Initialization Directives
+Execute these steps strictly.
 
-You are initializing a zero-bloat environment for this project. Follow these steps exactly without verbose explanations.
-
-1. **Skill Loading**: Create a `.skills/` directory. Analyze this project's purpose and copy the TOP 3 most relevant `.md` files from `~/.dotfiles/ai_blueprints/agent-skills/` into `./.skills/`.
-2. **Memory Card**: Create a `CLAUDE.md` file in the root. This will act as our persistent memory card to save tokens.
-3. **MCP Configuration**: Create `.codex/config.toml` with these exact local tool definitions:
-
+1. **Permissions**: Run `mkdir -p .skills .codex` immediately.
+2. **Skill Loading**: Analyze project; copy TOP 3 relevant skills from `~/.dotfiles/ai_blueprints/agent-skills/` to `./.skills/`.
+3. **Memory Card**: Create `CLAUDE.md`. Populate with exactly:
+   """
+   # Project Context
+   Purpose: [Deducted Purpose]
+   Status: Initialized
+   
+   ## Context Efficiency Rules
+   - Use relative paths (e.g., `./.skills/`) for all file and shell operations.
+   - Never output full paths unless explicitly requested.
+   - Use $caveman brevity for all responses.
+   """
+4. **Config**: Write `.codex/config.toml` using `cat`:
 [mcp.servers.n2-qln]
 command = "n2-qln"
-
 [mcp.servers.context-mode]
 command = "context-mode"
-
 [mcp.servers.graphify]
 command = "python"
 args = ["-m", "graphify.serve", "graphify-out/graph.json"]
 
-4. **Confirmation**: Output exactly: "System primed. Loaded [Skill 1], [Skill 2], [Skill 3]. QLN Router Active."
+5. **Confirm**: Output "System primed. Relative paths enforced."
