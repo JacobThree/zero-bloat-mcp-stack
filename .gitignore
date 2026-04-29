@@ -1,0 +1,10 @@
+.DS_Store
+
+# Benchmark artifacts (generated during /build)
+benchmarks/results/*.json
+benchmarks/results/*.log
+benchmarks/reports/*.md
+
+# Keep directory placeholders
+!benchmarks/results/.gitkeep
+!benchmarks/reports/.gitkeep

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "description": "Prompt corpus for A/B response benchmark: normal vs caveman style.",
+  "prompts": [
+    {
+      "id": "debug-api-timeout",
+      "prompt": "Our API intermittently times out under load. Explain likely causes and a concrete mitigation plan with immediate and long-term actions."
+    },
+    {
+      "id": "refactor-plan",
+      "prompt": "Create a refactor plan for splitting a monolithic service into bounded modules while minimizing release risk."
+    },
+    {
+      "id": "sql-optimization",
+      "prompt": "Review a slow SQL query strategy and provide actionable indexing and query-shape improvements, including validation steps."
+    },
+    {
+      "id": "incident-retro",
+      "prompt": "Draft a concise incident postmortem summary with timeline, root cause, impact, and prevention actions."
+    }
+  ]
+}

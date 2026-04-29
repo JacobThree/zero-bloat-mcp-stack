@@ -1,0 +1,9 @@
+[mcp.servers.n2-qln]
+command = "n2-qln"
+
+[mcp.servers.context-mode]
+command = "context-mode"
+
+[mcp.servers.graphify]
+command = "python"
+args = ["-m", "graphify.serve", "graphify-out/graph.json"]

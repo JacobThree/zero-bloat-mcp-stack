@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "description": "Deterministic local benchmark scenarios for baseline vs stack token comparison.",
+  "notes": [
+    "All scenarios are repo-local and avoid network calls.",
+    "Commands are mode-agnostic; stack mode can wrap the same command via rtk."
+  ],
+  "scenarios": [
+    {
+      "id": "file-index-top120",
+      "baseline_command": "rg --files | sort | head -n 120",
+      "stack_command": "rtk find . -type f",
+      "timeout_sec": 20
+    },
+    {
+      "id": "readme-snippet",
+      "baseline_command": "sed -n '1,220p' README.md",
+      "stack_command": "rtk read README.md",
+      "timeout_sec": 20
+    },
+    {
+      "id": "spec-skill-snippet",
+      "baseline_command": "sed -n '1,260p' ai_blueprints/agent-skills/skills/spec-driven-development/SKILL.md",
+      "stack_command": "rtk read ai_blueprints/agent-skills/skills/spec-driven-development/SKILL.md",
+      "timeout_sec": 20
+    },
+    {
+      "id": "agent-skills-file-tree",
+      "baseline_command": "find ai_blueprints/agent-skills -maxdepth 3 -type f | sort",
+      "stack_command": "rtk tree ai_blueprints/agent-skills",
+      "timeout_sec": 30
+    }
+  ]
+}
