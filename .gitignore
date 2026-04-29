@@ -1,4 +1,6 @@
 .DS_Store
+__pycache__/
+*.pyc
 
 # Benchmark artifacts (generated during /build)
 benchmarks/results/*.json

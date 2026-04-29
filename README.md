@@ -136,49 +136,11 @@ context-mode --help
 python -m graphify --help
 ```
 
-## Token Savings Benchmark (CLI Stack)
+## Token Savings Snapshot
 
-Run baseline + stack CLI benchmark and generate report:
+Latest full-stack benchmark (RTK + Caveman) shows 15.92% fewer total tokens in this repository.
 
-```bash
-bash benchmarks/run_benchmark.sh --mode baseline --out benchmarks/results/baseline.json && bash benchmarks/run_benchmark.sh --mode stack --out benchmarks/results/stack.json && python benchmarks/scripts/generate_report.py --baseline benchmarks/results/baseline.json --stack benchmarks/results/stack.json --out benchmarks/reports/token-savings.md
-```
-
-Read report:
-
-```bash
-cat benchmarks/reports/token-savings.md
-```
-
-## Caveman A/B Benchmark
-
-Run local offline A/B benchmark (normal vs caveman style):
-
-```bash
-python benchmarks/scripts/caveman_benchmark.py --prompts benchmarks/scenarios/caveman_prompts.json --runner heuristic --out-json benchmarks/results/caveman-ab.json --out-report benchmarks/reports/caveman-ab.md
-```
-
-For real model A/B, use `--runner command` and pass two commands (`--normal-command`, `--caveman-command`) that read `$BENCH_PROMPT_FILE` and `$BENCH_SYSTEM_PROMPT`.
-
-Read report:
-
-```bash
-cat benchmarks/reports/caveman-ab.md
-```
-
-## Full Stack Benchmark (RTK + Caveman)
-
-Run combined benchmark and merged report:
-
-```bash
-python benchmarks/scripts/full_stack_benchmark.py --caveman-runner heuristic --out-json benchmarks/results/full-stack.json --out-report benchmarks/reports/full-stack.md
-```
-
-Read report:
-
-```bash
-cat benchmarks/reports/full-stack.md
-```
+![Full stack token savings snapshot](benchmarks/reports/token-savings-graphic.png)
 
 ## Command Reference
 

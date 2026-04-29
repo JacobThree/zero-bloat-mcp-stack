@@ -47,6 +47,18 @@ Read merged report:
 cat benchmarks/reports/full-stack.md
 ```
 
+## Generate Graphic
+
+Generate social graphics (1200x627) from latest full-stack benchmark:
+
+```bash
+python benchmarks/scripts/generate_graphic.py --input benchmarks/results/full-stack.json --output benchmarks/reports/token-savings-graphic.svg
+python benchmarks/scripts/generate_graphic_png.py --input benchmarks/results/full-stack.json --output benchmarks/reports/token-savings-graphic.png
+```
+
+Top-level README snapshot uses:
+- `benchmarks/reports/token-savings-graphic.png`
+
 Real model run (same prompts, two system modes):
 
 ```bash
