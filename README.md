@@ -9,7 +9,7 @@ This repository provides a zero-bloat pipeline for AI coding assistants. By comb
 This stack is primarily built and tested for UNIX-like environments and modern AI coding assistants.
 
 * **Operating Systems:** macOS (Apple Silicon / M-Series tested) and Linux.
-* **AI Assistants:** Fully compatible with Codex (Claude Code CLI). The underlying MCP servers and orchestration patterns can also be ported to Cursor and Google Antigravity with minor configuration tweaks.
+* **AI Assistants:** Fully compatible with Codex (Claude Code CLI) and Cursor. The underlying MCP servers and orchestration patterns can also be ported to Google Antigravity with minor configuration tweaks.
 * **Prerequisites:** Git, Node.js (npm), Python 3 (pip), and bash/zsh.
 
 ## The Stack
@@ -75,6 +75,20 @@ This command will:
 - Generate `.codex/config.toml` for `n2-qln`, `context-mode`, and `graphify`.
 - Run stack checks and write `.codex/stack-check.md`.
 
+## Quickstart (Cursor)
+
+To initialize this architecture in a new or existing project, navigate to your project directory and run:
+
+```bash
+~/.dotfiles/ai_blueprints/cursor_project_init.sh .
+```
+
+This command will:
+
+- Create `.cursor/rules/` and map lifecycle skills.
+- Create `.cursor/rules/stack-runtime.md` with stack workflow/runtime rules.
+- Run stack checks and write `.cursor/stack-check.md`.
+
 ## Existing Project Workflow (Recommended Order)
 
 Run this sequence in any existing repo:
@@ -96,6 +110,24 @@ ls -la graphify-out
 
 # 5) Start working with lifecycle commands in Codex
 # /spec -> /plan -> /build -> /test -> /review -> /ship
+```
+
+Cursor variant:
+
+```bash
+# 1) Enter project
+cd /path/to/your/project
+
+# 2) Initialize Cursor rules + stack check
+~/.dotfiles/ai_blueprints/cursor_project_init.sh .
+
+# 3) Re-run Cursor smoke check any time
+~/.dotfiles/ai_blueprints/cursor_stack_smoke_test.sh .
+cat .cursor/stack-check.md
+
+# 4) Build graph index for architecture-aware queries
+graphify update .
+ls -la graphify-out
 ```
 
 Practical daily loop:
@@ -121,10 +153,22 @@ Run per-project smoke test:
 ~/.dotfiles/ai_blueprints/stack_smoke_test.sh
 ```
 
+Cursor per-project smoke test:
+
+```bash
+~/.dotfiles/ai_blueprints/cursor_stack_smoke_test.sh .
+```
+
 Read results:
 
 ```bash
 cat .codex/stack-check.md
+```
+
+Cursor results:
+
+```bash
+cat .cursor/stack-check.md
 ```
 
 Global checks:
@@ -154,6 +198,12 @@ Initialize current repo:
 
 ```bash
 $caveman Execute ~/.dotfiles/ai_blueprints/project_init.md strictly.
+```
+
+Initialize current repo for Cursor:
+
+```bash
+~/.dotfiles/ai_blueprints/cursor_project_init.sh .
 ```
 
 Skill lifecycle commands (inside Codex):

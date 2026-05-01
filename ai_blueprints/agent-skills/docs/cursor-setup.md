@@ -1,5 +1,13 @@
 # Using agent-skills with Cursor
 
+If you installed this repository as `~/.dotfiles`, you can auto-bootstrap a project with:
+
+```bash
+~/.dotfiles/ai_blueprints/cursor_project_init.sh .
+~/.dotfiles/ai_blueprints/cursor_stack_smoke_test.sh .
+cat .cursor/stack-check.md
+```
+
 ## Setup
 
 ### Option 1: Rules Directory (Recommended)

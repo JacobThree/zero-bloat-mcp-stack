@@ -48,3 +48,5 @@ python -c "import graphify" >/dev/null 2>&1
 echo "Stack deployed."
 echo "Skills mapped: /spec /plan /build /test /review /ship"
 echo "Per-project verify: ./ai_blueprints/stack_smoke_test.sh"
+echo "Cursor init: ./ai_blueprints/cursor_project_init.sh ."
+echo "Cursor verify: ./ai_blueprints/cursor_stack_smoke_test.sh ."
